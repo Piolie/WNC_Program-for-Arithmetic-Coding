@@ -1,6 +1,7 @@
 /* ARITHMETIC ENCODING ALGORITHM. */
 
 #include "arithmetic_coding.h"
+#include "bit_io.h"
 
 static void bit_plus_follow(int bit);  /* Routine that follows              */
 

@@ -1,6 +1,7 @@
 /* ARITHMETIC DECODING ALGORITHM. */
 
 #include "arithmetic_coding.h"
+#include "bit_io.h"
 
 
 /* CURRENT STATE OF THE DECODING. */

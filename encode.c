@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "model.h"
+#include "bit_io.h"
 
 int main(void)
 {   start_model();                              /* Set up other modules.    */

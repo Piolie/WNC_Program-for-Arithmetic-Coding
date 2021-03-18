@@ -1,6 +1,7 @@
 /* BIT OUTPUT ROUTINES. */
 
 #include <stdio.h>
+#include "bit_io.h"
 
 
 /* THE BIT BUFFER. */
