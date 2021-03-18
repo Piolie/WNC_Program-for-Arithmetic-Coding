@@ -39,7 +39,7 @@ int freq[No_of_symbols+1] = {
 
 /* INITIALIZE THE MODEL. */
 
-start_model()
+void start_model(void)
 {   int i;
     for (i = 0; i<No_of_chars; i++) {           /* Set up tables that       */
         char_to_index[i] = i+1;                 /* translate between symbol */
@@ -55,7 +55,7 @@ start_model()
 
 /* UPDATE THE MODEL TO ACCOUNT FOR A NEW SYMBOL. */
 
-update_model(symbol)
-    int symbol;
+void update_model(int symbol)
+ /* int symbol; */
 {                                               /* Do nothing. */
 }

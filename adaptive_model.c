@@ -7,7 +7,7 @@ int freq[No_of_symbols+1];      /* Symbol frequencies                       */
 
 /* INITIALIZE THE MODEL. */
 
-start_model()
+void start_model(void)
 {   int i;
     for (i = 0; i<No_of_chars; i++) {           /* Set up tables that       */
         char_to_index[i] = i+1;                 /* translate between symbol */
@@ -23,8 +23,8 @@ start_model()
 
 /* UPDATE THE MODEL TO ACCOUNT FOR A NEW SYMBOL. */
 
-update_model(symbol)
-    int symbol;                 /* Index of new symbol                      */
+void update_model(int symbol)
+ /* int symbol; */              /* Index of new symbol                      */
 {   int i;                      /* New index for symbol                     */
     if (cum_freq[0]==Max_frequency) {           /* See if frequency counts  */
         int cum;                                /* are at their maximum.    */

@@ -13,7 +13,7 @@ static int garbage_bits;        /* Number of bits past end-of-file          */
 
 /* INITIALIZE BIT INPUT. */
 
-start_inputing_bits()
+void start_inputing_bits(void)
 {   bits_to_go = 0;                             /* Buffer starts out with   */
     garbage_bits = 0;                           /* no bits in it.           */
 }
@@ -21,7 +21,7 @@ start_inputing_bits()
 
 /* INPUT A BIT. */
 
-int input_bit()
+int input_bit(void)
 {   int t;
     if (bits_to_go==0) {                        /* Read the next byte if no */
         buffer = getc(stdin);                   /* bits are left in buffer. */

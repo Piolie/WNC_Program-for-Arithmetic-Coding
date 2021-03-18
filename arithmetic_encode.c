@@ -2,7 +2,7 @@
 
 #include "arithmetic_coding.h"
 
-static void bit_plus_follow();  /* Routine that follows                     */
+static void bit_plus_follow(int bit);  /* Routine that follows              */
 
 
 /* CURRENT STATE OF THE ENCODING. */
@@ -14,7 +14,7 @@ static long bits_to_follow;     /* Number of opposite bits to output after  */
 
 /* START ENCODING A STREAM OF SYMBOLS. */
 
-start_encoding()
+void start_encoding(void)
 {   low = 0;                                    /* Full code range.         */
     high = Top_value;
     bits_to_follow = 0;                         /* No bits to follow next.  */
@@ -23,9 +23,9 @@ start_encoding()
 
 /* ENCODE A SYMBOL. */
 
-encode_symbol(symbol,cum_freq)
-    int symbol;                 /* Symbol to encode                         */
-    int cum_freq[];             /* Cumulative symbol frequencies            */
+void encode_symbol(int symbol, int cum_freq[])
+ /* int symbol; */              /* Symbol to encode                         */
+ /* int cum_freq[]; */          /* Cumulative symbol frequencies            */
 {   long range;                 /* Size of the current code region          */
     range = (long)(high-low)+1;
     high = low +                                /* Narrow the code region   */
@@ -56,7 +56,7 @@ encode_symbol(symbol,cum_freq)
 
 /* FINISH ENCODING THE STREAM. */
 
-done_encoding()
+void done_encoding(void)
 {   bits_to_follow += 1;                        /* Output two bits that     */
     if (low<First_qtr) bit_plus_follow(0);      /* select the quarter that  */
     else bit_plus_follow(1);                    /* the current code range   */
@@ -65,8 +65,8 @@ done_encoding()
 
 /* OUTPUT BITS PLUS FOLLOWING OPPOSITE BITS. */
 
-static void bit_plus_follow(bit)
-    int bit;
+static void bit_plus_follow(int bit)
+ /* int bit; */
 {   output_bit(bit);                            /* Output the bit.          */
     while (bits_to_follow>0) {
         output_bit(!bit);                       /* Output bits to follow    */
