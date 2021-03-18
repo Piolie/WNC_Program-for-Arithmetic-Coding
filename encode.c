@@ -5,6 +5,10 @@
 #include "model.h"
 #include "bit_io.h"
 
+int char_to_index[No_of_chars];                 /* To index from character  */
+unsigned char index_to_char[No_of_symbols+1];   /* To character from index  */
+int cum_freq[No_of_symbols+1];          /* Cumulative symbol frequencies    */
+
 int main(void)
 {   start_model();                              /* Set up other modules.    */
     start_outputing_bits();
