@@ -1,6 +1,7 @@
 /* BIT INPUT ROUTINES. */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "arithmetic_coding.h"
 
 
