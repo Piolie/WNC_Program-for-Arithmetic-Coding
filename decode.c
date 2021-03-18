@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include "model.h"
 
-main()
+int main(void)
 {   start_model();                              /* Set up other modules.    */
     start_inputing_bits();
     start_decoding();

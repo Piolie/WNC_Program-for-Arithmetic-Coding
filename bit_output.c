@@ -11,7 +11,7 @@ static int bits_to_go;          /* Number of bits free in buffer            */
 
 /* INITIALIZE FOR BIT OUTPUT. */
 
-start_outputing_bits()
+void start_outputing_bits(void)
 {   buffer = 0;                                 /* Buffer is empty to start */
     bits_to_go= 8;                              /* with.                    */
 }
@@ -19,7 +19,7 @@ start_outputing_bits()
 
 /* OUTPUT A BIT. */
 
-output_bit(int bit)
+void output_bit(int bit)
  /* int bit; */
 {   buffer >>= 1;                               /* Put bit in top of buffer.*/
     if (bit) buffer |= 0x80;
@@ -33,6 +33,6 @@ output_bit(int bit)
 
 /* FLUSH OUT THE LAST BITS. */
 
-done_outputing_bits()
+void done_outputing_bits(void)
 {   putc(buffer>>bits_to_go,stdout);
 }

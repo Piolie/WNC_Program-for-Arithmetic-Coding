@@ -11,7 +11,7 @@ static code_value low, high;    /* Ends of current code region              */
 
 /* START DECODING A STREAM OF SYMBOLS. */
 
-start_decoding()
+void start_decoding(void)
 {   int i;
     value = 0;                                  /* Input bits to fill the   */
     for (i = 1; i<=Code_value_bits; i++) {      /* code value.              */
@@ -24,8 +24,8 @@ start_decoding()
 
 /* DECODE THE NEXT SYMBOL. */
 
-int decode_symbol(cum_freq)
-    int cum_freq[];             /* Cumulative symbol frequencies            */
+int decode_symbol(int cum_freq[])
+ /* int cum_freq[]; */          /* Cumulative symbol frequencies            */
 {   long range;                 /* Size of current code region              */
     int cum;                    /* Cumulative frequency calculated          */
     int symbol;                 /* Symbol decoded                           */
