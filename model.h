@@ -11,15 +11,16 @@
 
 /* TRANSLATION TABLES BETWEEN CHARACTERS AND SYMBOL INDEXES. */
 
-int char_to_index[No_of_chars];         /* To index from character          */
-unsigned char index_to_char[No_of_symbols+1]; /* To character from index    */
+extern int char_to_index[No_of_chars];  /* To index from character          */
+extern unsigned char index_to_char[No_of_symbols+1];    /* To character     */
+                                                        /* from index       */
 
 
 /* CUMULATIVE FREQUENCY TABLE. */
 
 #define Max_frequency 16383             /* Maximum allowed frequency count  */
                                         /* 2^14 - 1                         */
-int cum_freq[No_of_symbols+1];          /* Cumulative symbol frequencies    */
+extern int cum_freq[No_of_symbols+1];   /* Cumulative symbol frequencies    */
 
 
 /* FUNCTION PROTOTYPES */
