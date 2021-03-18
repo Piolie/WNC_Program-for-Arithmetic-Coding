@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "arithmetic_coding.h"
+#include "bit_io.h"
 
 
 /* THE BIT BUFFER. */
