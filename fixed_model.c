@@ -1,5 +1,6 @@
 /* THE FIXED SOURCE MODEL */
 
+#include <stdlib.h>
 #include "model.h"
 
 int freq[No_of_symbols+1] = {
