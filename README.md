@@ -8,7 +8,7 @@ Here is a list of my changes:
 - Updated/added headers with missing function prototypes.
 - Declared global variables in `model.h` and defined them in `encode.c` and `decode.c`.
 
-Run `make` to generate both pairs of the program. (encode_f, decode_f) use the fixed model, while (encode_a, decode_a) use the adaptive one. Running `make fixed` or `make adaptive` to generate just one pair.
+encode_f/decode_f use the fixed model, while encode_a/decode_a use the adaptive one. Run `make` to generate both pairs and `make fixed` or `make adaptive` to generate just one pair.
 
 (For a similar project implemented in C++, see [dmitrykravchenko2018/arithmetic_coding](https://github.com/dmitrykravchenko2018/arithmetic_coding).)
 
