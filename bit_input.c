@@ -26,7 +26,7 @@ void start_inputing_bits(void)
 int input_bit(void)
 {   int t;
     if (bits_to_go==0) {                        /* Read the next byte if no */
-        buffer = getc(stdin);                   /* bits are left in buffer. */
+        buffer = getc(fi);                      /* bits are left in buffer. */
         if (buffer==EOF) {
             garbage_bits += 1;                      /* Return arbitrary bits*/
             if (garbage_bits>Code_value_bits-2) {   /* after eof, but check */

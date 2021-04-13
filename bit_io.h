@@ -1,3 +1,11 @@
+/* FILE VARIABLES             */
+
+#include <stdio.h>
+
+extern FILE *fi;                     /* Input file                          */
+extern FILE *fo;                     /* Output file                         */
+
+
 /* BIT INPUT/OUTPUT ROUTINES. */
 
 void start_inputing_bits(void);     /* INITIALIZE BIT INPUT.                */
