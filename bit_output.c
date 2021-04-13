@@ -26,7 +26,7 @@ void output_bit(int bit)
     if (bit) buffer |= 0x80;
     bits_to_go -= 1;
     if (bits_to_go==0) {                        /* Output buffer if it is   */
-        putc(buffer,stdout);                    /* now full.                */
+        putc(buffer,fo);                        /* now full.                */
         bits_to_go = 8;
     }
 }
@@ -35,5 +35,5 @@ void output_bit(int bit)
 /* FLUSH OUT THE LAST BITS. */
 
 void done_outputing_bits(void)
-{   putc(buffer>>bits_to_go,stdout);
+{   putc(buffer>>bits_to_go,fo);
 }

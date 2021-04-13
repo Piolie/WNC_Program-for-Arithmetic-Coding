@@ -3,12 +3,19 @@ This repo contains a transcript of the C _Program for Arithmetic Coding_ found i
 The `verbatim` folder hosts the original, (hopefully) unchanged files as they appear in the paper, while the root contains my modified, (hopefully) compileable files and a makefile.
 
 Here is a list of my changes:
-- Since the program was written before the C programming language was first standardized, it has uses old style function declarations: the type of the function arguments used to be declared below the signature and before the opening braces (see [this SO question](https://stackoverflow.com/questions/13789450/variable-declaration-between-function-name-and-first-curly-brace)). I commented those lines and updated the signatures to modern standards.
+- Since the program was written before the C programming language was first standardized, it uses old style function declarations: the type of the function arguments used to be declared below the signature and before the opening braces (see [this SO question](https://stackoverflow.com/questions/13789450/variable-declaration-between-function-name-and-first-curly-brace)). I commented those lines and updated the signatures to modern standards.
 - Included <stdlib.h>, so that the `exit` and `abort` functions are available.
 - Updated/added headers with missing function prototypes.
 - Declared global variables in `model.h` and defined them in `encode.c` and `decode.c`.
+- Made changes so that the programs read from/write to files instead of stdin/stdout.
 
 encode_f/decode_f use the fixed model, while encode_a/decode_a use the adaptive one. Run `make` to generate both pairs and `make fixed` or `make adaptive` to generate just one pair.
+
+# Usage
+To use the coder, run:
+- `encode_X <infile> <encfile>`
+- `decode_X <encfile> <decfile>`
+where X stands for the model: either `f` (fixed) or `a` (adaptive).
 
 (For a similar project implemented in C++, see [dmitrykravchenko2018/arithmetic_coding](https://github.com/dmitrykravchenko2018/arithmetic_coding).)
 
